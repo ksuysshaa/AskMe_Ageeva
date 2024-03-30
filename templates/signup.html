@@ -53,54 +53,57 @@
     </nav>
 
     <main class="container-fluid container-lg mt-3">
-        <div class="row">
-            <div class="col-8">
-                <h1>Register</h1>
+        <div class="d-flex gap-3 align-items-center">
+          <h1>Register</h1>
+        </div>
 
-                <div class="alert alert-danger col-7" role="alert">Incorrect login or password!</div>
+        <div class="row">
+            <div class="col-8 mt-2">
+                <div class="alert alert-danger col-10 mt-3" role="alert">Sorry, this email already registered!</div>
 
                 <div class="login form">
-                    <div class="mb-2 row">
+                    <div class="mb-3 mt-3 row">
                         <label class="col-sm-3 col-form-label">Login</label>
-                        <div class="col-sm-5">
-                          <input class="form-control">
+                        <div class="col-sm-7">
+                          <input class="form-control" placeholder="dr_pepper">
                         </div>
                     </div>
 
-                    <div class="mb-3 mt-3 row">
+                    <div class="mb-3 mt-5 row">
                         <label class="col-sm-3 col-form-label">Email</label>
-                        <div class="col-sm-5">
-                          <input class="form-control">
+                        <div class="col-sm-7">
+                          <input class="form-control" placeholder="dr_pepper@mail.ru">
                         </div>
                     </div>
 
-                    <div class="mb-3 mt-3 row">
+                    <div class="mb-3 mt-5 row">
                         <label class="col-sm-3 col-form-label">NickName</label>
-                        <div class="col-sm-5">
-                          <input class="form-control">
+                        <div class="col-sm-7">
+                          <input class="form-control" placeholder="Dr_Pepper">
                         </div>
                     </div>
 
-                    <div class="mb-3 mt-3 row">
+                    <div class="mb-3 mt-5 row">
                         <label class="col-sm-3 col-form-label">Password</label>
-                        <div class="col-sm-5">
-                          <input class="form-control" type="password">
+                        <div class="col-sm-7">
+                          <input class="form-control" type="password" placeholder="Password">
                         </div>
                     </div>
 
-                    <div class="mb-3 mt-3 row">
+                    <div class="mb-3 mt-5 row">
                         <label class="col-sm-3 col-form-label">Repeat password</label>
-                        <div class="col-sm-5">
-                          <input class="form-control" type="password">
+                        <div class="col-sm-7">
+                          <input class="form-control" type="password" placeholder="Password">
                         </div>
                     </div>
 
-                    <div class="mb-3 mt-3 row">
+                    <div class="mb-4 mt-5 row">
                         <label class="col-sm-3 col-form-label">Upload file</label>
-                        <div class="col-sm-5">
+                        <div class="col-sm-7">
                           <input class="form-control" type="file">
                         </div>
                     </div>
+
 
                 <button class="btn btn-outline-primary" type="submit" style="margin-left: 220px">Register!</button>
                </div>
