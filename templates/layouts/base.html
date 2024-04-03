@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
       <div class="container-fluid container-lg">
 
         <a class="navbar-brand">
-            <img src="../../static/img/logo.png"
+            <img src="{% static 'img/logo.png' %}"
                  width="33"
                  height="33"
                  class="d-inline-block align-top"
@@ -31,12 +32,12 @@
             placeholder="Search"
           />
 
-          <button class="btn btn-outline-primary" type="submit">Ask!</button>
+          <button class="btn btn-outline-primary" type="submit">Search</button>
         </form>
 
         <div class="d-flex justify-content-between gap-3">
           <div class="border">
-              <img src="../../static/img/ava.png"
+              <img src="{% static 'img/ava.png' %}"
                    width="45"
                    height="45"/>
           </div>
@@ -55,9 +56,10 @@
     <main class="container-fluid container-lg mt-3">
         <div class="row">
             <div class="col-8">
-                Content
+                {% block content %}
+                {% endblock %}
             </div>
-            <div class="col-4">
+            <div class="col-4 mt-5">
               <h3>Popular Tags</h3>
               <div class="row">
                 <div class="col">
