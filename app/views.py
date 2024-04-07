@@ -30,9 +30,12 @@ PER_PAGE = 10
 
 
 def paginate(objects, request, per_page=PER_PAGE):
-    page_num = request.GET.get('page', 1)
+    page_num = int(request.GET.get('page', 1))
     paginator = Paginator(objects, per_page)
     page_obj = paginator.page(page_num)
+    if page_num > len(objects) / per_page or page_num < 1:
+        page_obj2 = paginator.page(1)
+        return page_obj2
     return page_obj
 
 # Create your views here.
