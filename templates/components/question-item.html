@@ -21,15 +21,12 @@
         {{ question.text }}
       </p>
       <div class="row">
-        <a class="col-4" href="/question-item.html">answers (3)</a>
+        <a class="col-4" href="/question/{{ question.id }}">answers</a>
         <div class="col-8">
-          <span>Tags</span>
-          <a href="/tag.html">tag</a>
-          <a href="/tag.html">tag</a>
-          <a href="/tag.html">tag</a>
-          <a href="/tag.html">tag</a>
-          <a href="/tag.html">tag</a>
-          <a href="/tag.html">tag</a>
+          <span>Tags: </span>
+          {% for tag in tags %}
+              <a href="/tags/?tag={{ tag.id }}">{{ tag.title }}</a>
+          {% endfor %}
         </div>
       </div>
     </div>

@@ -1,0 +1,15 @@
+{% load static %}
+<div class="d-flex justify-content-between gap-3">
+  <div class="border">
+      <img src="{% static 'img/ava.png' %}"
+           width="45"
+           height="45"/>
+  </div>
+  <div class="d-flex flex-column justify-content-between">
+    <div>Ksenia Ageeva</div>
+    <div>
+      <a href="{% url "settings" %}">Settings</a>
+      <a href="{% url "logout" %}">Log out</a>
+    </div>
+  </div>
+</div>
