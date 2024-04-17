@@ -1,4 +1,4 @@
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 
 TAGS = [
@@ -28,15 +28,18 @@ QUESTIONS = [
 
 PER_PAGE = 10
 
-
 def paginate(objects, request, per_page=PER_PAGE):
-    page_num = int(request.GET.get('page', 1))
-    paginator = Paginator(objects, per_page)
-    page_obj = paginator.page(page_num)
-    if page_num > len(objects) / per_page or page_num < 1:
-        page_obj2 = paginator.page(1)
-        return page_obj2
+    try:
+        page_num = int(request.GET.get('page', 1))
+        paginator = Paginator(objects, per_page)
+        page_obj = paginator.page(page_num)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
+
     return page_obj
+
 
 # Create your views here.
 
