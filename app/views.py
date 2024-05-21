@@ -5,7 +5,6 @@ TAGS = [
     {
         "id": i,
         "title": f"Tag {i}",
-        "text": f"This is tag number {i}"
     } for i in range(5)
 ]
 
