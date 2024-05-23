@@ -1,6 +1,10 @@
-version: "3.9"
+version: '3'
 services:
-  database:
-    build: .
-    ports:
-      - "3306:3306"
+    mysql1:
+        image: container-registry.oracle.com/mysql/enterprise-server:latest
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: pass  # Ваш пароль
+            MYSQL_DATABASE: AskMe  # Ваше имя базы данных
+        ports:
+            - "3306:3306" # Маппинг портов, чтобы порт MySQL был доступен извне

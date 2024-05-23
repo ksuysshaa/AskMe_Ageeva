@@ -1,36 +1,33 @@
 {% load static %}
-{% block content %}
-<article class="card mb-3 w-100">
-<div class="row g-0">
-  <div class="col-2 p-2">
-    <div class="border mb-3" style="height: 100px; width: 100px">
-      <img
-        src="{% static 'img/quest.png' %}"
-        class="img-fluid rounded-start"
-        alt="..."
-      />
-    </div>
-    <div class="input-group flex-nowrap" style="height: 30px; width: 100px">
-      <input type="number" value="5" class="form-control" />
-    </div>
-  </div>
-  <div class="col">
-    <div class="card-body">
-      <h5><a href="{% url "question" question.id %}">{{ question.title }}</a></h5>
-      <p class="card-text">
-        {{ question.text }}
-      </p>
-      <div class="row">
-        <a class="col-4" href="/question/{{ question.id }}">answers</a>
-        <div class="col-8">
-          <span>Tags: </span>
-          {% for tag in tags %}
-              <a href="/tags/?tag={{ tag.id }}">{{ tag.title }}</a>
-          {% endfor %}
+
+<div class="card">
+    <div class="row g-0">
+        <div class="col-2">
+            <img class="question-img" src="{% static '/img/ava.jpg' %}" alt="...">
+            <!--                        <div class="vote">-->
+            <!--                            <p><input type="number" name="like" value="5" min="0" max="100" step="1"></p>-->
+            <!--                        </div>-->
+            <p>
+                <button type="submit" class="like-btn">
+                    <img src="{% static '/img/like.svg' %}" class="like-img">
+                </button>
+                {{ question.likes_count }}
+            </p>
         </div>
-      </div>
+        <div class="col-10">
+            <div class="card-body">
+                <h4><a class="card-title" href="{% url 'question' question.id %}">{{ question.title }}</a>
+                </h4>
+                <p class="card-text">
+                    {{ question.text|slice:":170" }}...
+                </p>
+                <p>Tags:
+                    {% for tag in question.tags.all %}
+                    <a class="ques-tags" href="{% url 'tag' tag.name %}">{{ tag.name }}</a>
+                    {% endfor %}
+                </p>
+                <a class="ques-ans" href="{% url 'question' question.id %}">Go to answers ({{ question.answers_count }})</a>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
-</article>
-{% endblock %}

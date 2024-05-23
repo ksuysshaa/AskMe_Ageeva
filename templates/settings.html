@@ -1,43 +1,63 @@
-{% extends "layouts/base.html" %}
-{% block auth %}
-    {% include 'components/auth-user-item.html' %}
-{% endblock %}
+{% extends base %}
+
+{% load static %}
 
 {% block content %}
-    <div class="d-flex gap-3 align-items-center">
-      <h1>Settings</h1>
-    </div>
 
-    <div class="row">
-        <div class="col-8">
-            <div class="alert alert-danger mt-3 col-11" role="alert">Error!</div>
-            <div class="login-form">
-                <div class="mb-3 mt-3 row">
-                <label class="col-sm-3 col-form-label">Login</label>
-                <div class="col-sm-8">
-                  <input class="form-control" placeholder="Login">
-                </div>
-              </div>
-            <div class="mb-4 mt-5 row">
-                <label class="col-sm-3 col-form-label">Password</label>
-                <div class="col-sm-8">
-                  <input class="form-control" type="password" placeholder="Password">
-                </div>
-              </div>
-            <div class="mb-4 mt-5 row">
-                <label class="col-sm-3 col-form-label">Nickname</label>
-                <div class="col-sm-8">
-                  <input class="form-control" type="password" placeholder="Nickname">
-                </div>
-              </div>
-            <div class="mb-4 mt-5 row">
-                    <label class="col-sm-3 col-form-label">Upload file</label>
-                    <div class="col-sm-7">
-                      <input class="form-control" type="file">
-                    </div>
-            </div>
-            <button class="btn btn-outline-primary" type="submit" style="margin-left: 145px">Save</button>
-           </div>
-        </div>
+<h2 class="h2-ask">Settings: {{ user.username }}</h2>
+<div class="row">
+    <div class="col-2 signup-text">
+        <p>Login</p>
     </div>
+    <div class="col-6">
+        <input placeholder='{{ user.username }}' class="signup-input"></input>
+        <!-- <div class="signup-alert">
+            <div class="alert-child">Login is unvaluable.</div>
+        </div> -->
+    </div>
+</div>
+<div class=" row">
+    <div class="col-2 signup-text">
+        <p>Email</p>
+    </div>
+    <div class="col-6">
+        <input type="email" placeholder="{{ user.email }}" class="signup-input">
+        <!-- <div class="signup-alert"> -->
+        <!-- <div class="alert-child">This email address already registred! / Wrong Format.</div>
+        </div> -->
+    </div>
+</div>
+<div class="row">
+    <div class="col-2 signup-text">
+        <p>Nickname</p>
+    </div>
+    <div class="col-6">
+        <input placeholder="{{ profile.nickname }}" class="signup-input">
+        <!-- <div class="signup-alert">
+                <div class="alert-child">Nickname is unavaliable.</div>
+            </div> -->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-2 signup-text">
+        <p class="upload-ava">Upload avatar</p>
+    </div>
+    <div class="col-6">
+        <img class="settings-img" src="../static/img/ava.jpg">
+        <form action="/upload" method="post" enctype="multipart/form-data" class="signup-form">
+            <input type="file" name="image" id="image" class="signup-fileinput">
+        </form>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-6">
+        <button class="btn signup-btn">Save</button>
+    </div>
+</div>
+
 {% endblock %}

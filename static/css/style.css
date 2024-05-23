@@ -1,0 +1,499 @@
+/* .form-control {
+    width: 400px;
+    border-radius: 15px;
+} */
+
+.container {
+    max-width: 1100px;
+}
+
+.body {
+    font-family: 'Gill Sans';
+    min-height: 650px;
+}
+
+.my-nav {
+    background-color: rgb(214, 214, 214);
+    height: 68px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-family: 'Gill Sans';
+}
+
+.search-button {
+    font-size: 15px;
+    border-radius: 15px;
+    width: 100px;
+    /* background-color: rgb(131, 131, 255); */
+    background-color: #5578f4;
+    /* border-color: rgb(131, 131, 255); */
+    border-color: #5578f4;
+    color: white;
+    margin-top: 14px;
+}
+
+.search-field {
+    border-radius: 15px;
+    margin-top: 14px;
+    border: none;
+    font-size: 15px;
+}
+
+.site-name {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 10px;
+    padding-left: 30px;
+    color: black;
+    text-decoration: none;
+}
+
+a.site-name:hover {
+    color: black;
+}
+
+.nav-link {
+    font-weight: 100;
+}
+
+.acc {
+    /* position: absolute;
+    right: 0; */
+    margin-top: 8px;
+    padding-left: 50px;
+    display: flex;
+}
+
+.acc-name {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: rgb(177, 177, 177);
+    margin-top: 8px;
+}
+
+.acc-settings,
+.acc-log-out {
+    color: black;
+    font-size: 16px;
+}
+
+.acc-log-in,
+.acc-register {
+    color: black;
+    font-size: 18px;
+    padding-top: 10px;
+    margin-right: 0px;
+}
+
+.main {
+    font-family: 'Gill Sans';
+    margin-top: 18px;
+}
+
+.main-btn {
+    /* font-size: 18px;
+    border-radius: 15px;
+    hei
+    width: 250px;
+    background-color: rgb(238, 238, 238);
+    border: none;
+    color: black;
+    padding: 10px; */
+    margin-top: 15px;
+    display: inline-block;
+    /* Строчно-блочный элемент */
+    background: rgb(238, 238, 238);
+    /* Серый цвет фона */
+    color: black;
+    /* Белый цвет текста */
+    padding: 10px 69px;
+    /* Поля вокруг текста */
+    text-decoration: none;
+    /* Убираем подчёркивание */
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+}
+
+
+.cur-questions {
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.other-questions {
+    color: rgb(158, 158, 158);
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    /* font-size: 20px; */
+}
+
+.new-hot-ques {
+    margin-top: 15px;
+}
+
+.cur-questions:hover {
+    color: #5578f4;
+}
+
+
+.question-img {
+    width: 100px;
+    /* display: block; */
+    /* margin: auto; */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+    /* border: 1px solid #000000; */
+}
+
+.card {
+    margin-left: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    height: 210px;
+    border-radius: 20px;
+    background-color: rgb(238, 238, 238);
+    border: none;
+}
+
+.card-title,
+.ques-ans {
+    color: black;
+}
+
+.ques-tags {
+    color: #5578f4;
+    font-weight: 600;
+}
+
+p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+a:hover {
+    color: #5578f4;
+}
+
+.vote {
+    margin-left: 50px;
+}
+
+.ques-btn {
+    background: #5578f4;
+    border-radius: 15px;
+}
+
+.page-link {
+    color: black;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    background-color: #5578f4;
+    /* background-color: #ce46ce; */
+    margin-bottom: 5px;
+    margin-right: 2px;
+    color: white;
+    border-radius: 15px;
+}
+
+.btn:hover {
+    color: black;
+    background-color: #8aa4ff;
+}
+
+.sidebar {
+    font-family: 'Gill Sans';
+    padding-top: 40px;
+}
+
+.tags {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.member {
+    color: black;
+    margin-bottom: 8px;
+}
+
+/* question.html */
+.ques-page-img {
+    width: 90px;
+    margin-top: 40px;
+}
+
+.ques-name {
+    margin-top: 28px;
+    margin-right: 10px;
+}
+
+.ques-body {
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.ques-text {
+    font-size: 18px;
+}
+
+hr {
+    border: 2px solid rgb(164, 164, 164);
+}
+
+.ans-input {
+    width: 100%;
+    resize: none;
+    margin-top: 5px;
+    border-radius: 10px;
+    border-color: rgb(195, 195, 195);
+    padding: 6px 0 4px 10px;
+}
+
+.ans-btn {
+    width: 120px;
+}
+
+footer.container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.float-end {
+    color: black;
+}
+
+
+.h2-ques {
+    margin-top: 18px;
+}
+
+.h2-ask {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.form-check {
+    margin-left: 16px;
+}
+
+/* ask.html */
+
+.ask-title,
+.ask-text,
+.ask-tags {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.ques-input {
+    width: 95%;
+    resize: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(195, 195, 195);
+    padding: 6px 0 4px 10px;
+}
+
+/* .footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+html,
+body {
+    height: 100%;
+} */
+
+.ask-btn {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100px;
+}
+
+/* .ask-alert {
+    height: 60px;
+    width: 697px;
+    border-radius: 15px;
+    border: none;
+    /* align-items: center; */
+/* margin-left: 81px;
+margin-bottom: 5px;
+} */
+
+.my-alert {
+    height: 40px;
+    background: pink;
+    vertical-align: middle;
+}
+
+.alert-parent {
+    width: 95%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(255, 224, 229);
+    margin-top: 7px;
+    margin-bottom: 10px;
+}
+
+.alert-child {
+    padding-left: 15px;
+    color: rgb(100, 28, 40);
+}
+
+/* signup.html */
+
+.signup-input {
+    width: 100%;
+    resize: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(195, 195, 195);
+    padding: 6px 0 4px 10px;
+}
+
+.signup-alert {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(255, 224, 229);
+    margin-top: 7px;
+    margin-bottom: 10px;
+}
+
+.signup-btn {
+    margin-top: 10px;
+    margin-bottom: 100px;
+    width: 120px;
+}
+
+.signup-text {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+
+    /* align-items: center; */
+}
+
+.signup-fileinput {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: rgb(195, 195, 195);
+    /* visibility: hidden; */
+}
+
+.signup-filebutton {
+    width: 100px;
+    background-color: rgb(240, 240, 240);
+    color: black;
+}
+
+.btn.signup-filebutton:hover {
+    background-color: rgb(204, 204, 204);
+}
+
+.upload-ava {
+    padding-top: 12px;
+}
+
+/* login.html */
+
+.login-btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 120px;
+}
+
+/* .footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* text-align: center; */
+/* padding: 10px 0;
+    font-weight: 450; */
+/* } */
+
+.footer {
+    height: 100px;
+    position: absolute;
+    width: 100%;
+}
+
+/* settings.html */
+/*
+.settings-img {
+    border: 1px solid rgb(214, 214, 214);
+} */
+
+img.settings-img {
+    margin-top: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    /* padding: 5px; */
+    width: 150px;
+}
+
+/* 404.html */
+
+.error {
+    font-size: 200px;
+    weight: 600;
+}
+
+.h2-tag-name {
+    font-weight: 550;
+    color: #5578f4;
+}
+
+.first-last-page {
+    border: none;
+    margin-right: 1px;
+}
+
+.first-last-page:hover {
+    color: #5578f4;
+    background-color: white;
+}
+
+.page-link:hover {
+    color: #5578f4;
+}
+
+.nav-link.active {
+    font-weight: 800;
+}
+
+.like-num {
+    margin-left: 5px;
+}
+
+.like-btn {
+    margin-left: 25px;
+    border: none;
+    background: rgb(238, 238, 238);
+}

@@ -1,23 +1,51 @@
-{% extends "layouts/base.html" %}
-{% block auth %}
-    {% include 'components/auth-user-item.html' %}
-{% endblock %}
+{% extends base %}
+
 {% load static %}
+
 {% block content %}
-    <div class="d-flex gap-3 align-items-center">
-        <h1>{{ question.title }}</h1>
+
+<div class="row ques-body">
+    <div class="col-2">
+        <img class="ques-page-img" src="{% static '/img/ava.jpg' %}" alt="...">
     </div>
-    
-    {% include "components/question-item.html" with item=question %}
-    <hr>
-    
-    {% for answer in answers %}
-      {% include "components/answer-item.html" with item=answer %}
-    {% endfor %}
-    
-    <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label"></label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your answer here" style="margin-top:-25px"></textarea>
+    <div class="col-10">
+        <h3 class="ques-name">{{ question.title }}</h3>
+        <p class="ques-text">
+            {{ question.text }}
+        </p>
+        <p class="ques-text">Tags:
+            {% for tag in question.tags.all %}
+            <a class="ques-tags" href="{% url 'tag' tag %}">{{ tag }}</a>
+            {% endfor %}
+        </p>
+
     </div>
-    <button type="button" class="btn btn-primary mb-3">Answer</button>
+</div>
+
+<hr>
+
+<h2 class="h2-ques">Answers</h2>
+
+{% for answer in page_obj %}
+
+{% include 'components/answer-item.html' %}
+
+{% endfor %}
+
+{% include 'components/pagination.html' %}
+
+<hr>
+{% if form.errors %}
+<div class="row">
+    <div class="alert-child">{{ form.errors }}</div>
+</div>
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    <h2 class="h2-ques">Do you know the answer? Share it with us!</h2>
+    <div class="ans-input">
+        <p><textarea rows="8" name="text" placeholder="Enter your answer" class="ans-input"></textarea></p>
+        <button class="btn ans-btn">Answer!</button>
+    </div>
+</form>
 {% endblock %}

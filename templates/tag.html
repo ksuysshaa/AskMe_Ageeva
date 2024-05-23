@@ -1,20 +1,17 @@
-{% extends "layouts/base.html" %}
-{% block auth %}
-    {% include 'components/auth-user-item.html' %}
-{% endblock %}
+{% extends base %}
+
 {% load static %}
+
 {% block content %}
-<main class="container-fluid container-lg mt-3">
-    <div class="d-flex gap-3 align-items-center">
-        <h5><span>By Tag: </span><button class="btn">{{ tag.title }}</button></h5>
-    </div>
-    
-    <div class="row">
-        {% for question in questions %}
-            {% include "components/question-item.html" with item=question %}
-        {% endfor %}
-        
-        {% include "components/pagination.html" with page_obj=questions %}  
-    </div>
-</main>
+
+<h2 class="h2-ask">Tag: <span class="h2-tag-name">{{ tag.name }}</span></h2>
+
+{% for question in page_obj %}
+
+{% include 'components/question-item.html' %}
+
+{% endfor %}
+
+{% include 'components/pagination.html' %}
+
 {% endblock %}

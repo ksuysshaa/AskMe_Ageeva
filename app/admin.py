@@ -8,3 +8,5 @@ admin.site.register(models.QuestionLike)
 admin.site.register(models.Tag)
 admin.site.register(models.Answer)
 admin.site.register(models.AnswerLike)
+
+# Register your models here.

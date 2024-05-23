@@ -1,19 +1,25 @@
-{% extends "layouts/base.html" %}
-{% load static %}
-{% block auth %}
-    {% include 'components/auth-user-item.html' %}
-{% endblock %}
-{% block content %}
-    <div class="d-flex gap-3 align-items-center">
-      <h1>Hot Questions</h1>
-      <a href="{% url "index" %}">New Questions</a>
-    </div>
+{% extends base %}
 
-    <div class="row">
-        {% for question in questions %}
-            {% include "components/question-item.html" with item=question %}
-        {% endfor %}
-        
-        {% include "components/pagination.html" with page_obj=questions %}  
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-8 new-hot-ques">
+        <a class="other-questions" href="{% url 'index' %}">New questions / </a>
+        <a class="cur-questions" href="{% url 'hot' %}">Hot questions</a>
     </div>
+    <div class="col-4">
+        <a class="main-btn" href="{% url 'ask' %}">Ask a question!</a>
+    </div>
+</div>
+
+{% for question in page_obj %}
+
+{% include 'components/question-item.html' %}
+
+{% endfor %}
+
+{% include 'components/pagination.html' %}
+
 {% endblock %}

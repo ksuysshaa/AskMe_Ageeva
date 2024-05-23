@@ -1,36 +1,46 @@
-{% extends "layouts/base.html" %}
-{% block auth %}
-    {% include 'components/auth-user-item.html' %}
-{% endblock %}
-{% load static %}
+{% extends base %}
+
 {% block content %}
-<main class="container-fluid container-lg mt-3">
-    <div class="d-flex gap-3 align-items-center">
-      <h1>New question</h1>
-    </div>
-     <div class="alert alert-danger mt-3 col-7" role="alert">Error!</div>
+
+<h2 class="h2-ask">New Question</h2>
+<form method="post">
+{% csrf_token %}
+    {% if form.errors %}
     <div class="row">
-        <div class="col-8">
-              <div class="mb-3 mt-2 row">
-                <label class="col-sm-2 col-form-label">Title</label>
-                <div class="col-sm-9">
-                  <input class="form-control">
-                </div>
-              </div>
-            <div class="mb-3 mt-5 row">
-                <label class="col-sm-2 col-form-label">Text</label>
-                <div class="col-sm-9">
-                    <textarea class="form-control" rows="7" ></textarea>
-                </div>
-              </div>
-            <div class="mb-3 mt-5 row">
-                <label class="col-sm-2 col-form-label">Tags</label>
-                <div class="col-sm-9">
-                  <input class="form-control">
-                </div>
-              </div>
-            <button class="btn btn-outline-primary" type="submit" style="margin-left: 95px">Ask!</button>
+        <div class="alert-child">{{ form.errors }}</div>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-1 ask-title">
+            <p>Title</p>
+        </div>
+        <div class="col-11">
+            <input name="title" placeholder="How can I build a moon park?"
+                   class="ques-input">
         </div>
     </div>
-</main>
+    <div class="row">
+        <div class="col-1 ask-text">
+            <p>Text</p>
+        </div>
+        <div class="col-11">
+            <textarea rows="8" name="text" placeholder="Enter question text" class="ques-input"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1 ask-tags">
+            <p>Tags</p>
+        </div>
+        <div class="col-11">
+            <input rows="1" name="tags" placeholder="Enter tags" class="ques-input">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1">
+        </div>
+        <div class="col-11">
+            <button class="btn ask-btn">Ask!</button>
+        </div>
+    </div>
+</form>
 {% endblock %}
