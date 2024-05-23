@@ -9,6 +9,7 @@ from django.views.decorators.csrf import csrf_protect
 from app.forms import LoginForm, RegistrationForm, AnswerForm, AskingForm
 from app.models import Question, Answer, Tag, User, Profile
 
+
 TAGS = list(Tag.objects.all())
 TAGS = TAGS[:10]
 USERS = list(User.objects.all())

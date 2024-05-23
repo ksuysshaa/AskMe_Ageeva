@@ -1,13 +1,19 @@
-<div class="col-md-3 acc">
+{% load static %}
+
+<div class="col-md-2 acc">
     <div>
+        <span class="acc-name">{{ user.username }}</span>
         <div class="row acc-funcs">
-            <div class="col-5"></div>
-            <div class="col-5 acc-log-in">
-                <a class="acc-log-in" href="{% url 'login' %}?continue={{ request.path }}">Log-in</a>
+            <div class="col-5">
+                <a class="link-opacity-25-hover acc-settings" href="{% url 'settings' %}">Settings</a>
             </div>
-            <div class="col-2 acc-register">
-                <a class="acc-register" href="{% url 'signup' %}?continue={{ request.path }}">Register</a>
+            <div class="col-7">
+                <a class="link-opacity-25-hover acc-log-out" href="{% url 'end_session' %}?continue={{ request.path }}">Log-out</a>
             </div>
+
         </div>
     </div>
+</div>
+<div class="col-md-1">
+    <img class="avatar" src="{% static '/img/ava.jpg' %}">
 </div>
